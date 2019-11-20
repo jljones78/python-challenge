@@ -5,29 +5,13 @@ import csv
 
 #         print(sum(map(int, income_row)))
     
-
-# with open('budget_data.csv','r') as budget_data:
-#     budget_csv = csv.reader(budget_data)
-#     header = next(budget_data)
-#     for line in budget_data:
-#         row = line.strip().split(",")
-#         date_row = row[0]
-#         income_row = row[1]
-
-
-all_income = []
+income = []
+months = []
 with open('budget_data.csv','r') as budget_data:
     budget_csv = csv.reader(budget_data, delimiter=',')
     csv_header = next(budget_csv)
     for row in budget_csv:
-        all_income.append(int(row[1]))
-    print(sum(all_income))
-
-
-
-
-
-        # if income_row[:1] == '-':
-        #     neg_income = income_row.replace('-','')
-
-
+        income.append(float(row[1]))
+        months.append((row[0]))
+    print(sum(income))
+    print(len(months))
