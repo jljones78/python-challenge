@@ -1,7 +1,5 @@
 import csv
 
-
-# filepath = "https://github.com/the-Coding-Boot-Camp-at-UT/UT-MCB-DATA-PT-11-2019-U-C/tree/master/Homework/02-Python/Instructions/PyBank/Resources/budget_data.csv"
 income_dict = {}
 with open("budget_data.csv", "r") as budget_data:
     budget_csv = csv.reader(budget_data)
