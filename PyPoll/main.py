@@ -1,18 +1,29 @@
 import csv
 
-
-vote_dict = {}
 with open("election_data.csv", "r") as election_data:
     election_csv = csv.reader(election_data)
     csv_header = next(election_csv)
+    vote_counts = {}
     for row in election_csv:
         voter_ID = row[0]
-        candidate = row[2]
-        vote_dict[candidate] = voter_ID
+        candidate_name = row[2]
+        if candidate_name in vote_counts:
+            vote_counts[candidate_name] += 1
+        else:
+            vote_counts[candidate_name] = 1
+    print(sum(vote_counts.values()))
+    print(vote_counts)
+    khan_votes = vote_counts["Khan"]
+    correy_votes = vote_counts["Correy"]
+    li_votes = vote_counts["Li"]
+    otooley_votes = vote_counts["O'Tooley"]
 
-    for candidate in vote_dict.items():
-        candidates = candidate[0]
-        print(candidates)
+
+# vote_dict[candidate_name] = voter_ID
+
+# for candidate_name in vote_dict.items():
+#     candidate = candidate_name[0]
+#     print(candidate)
 
 
 #     budget_csv = csv.reader(budget_data)
