@@ -11,7 +11,8 @@ with open("election_data.csv", "r") as election_data:
         vote_dict[candidate] = voter_ID
 
     for candidate in vote_dict.items():
-        print(candidate[0])
+        candidates = candidate[0]
+        print(candidates)
 
 
 #     budget_csv = csv.reader(budget_data)
